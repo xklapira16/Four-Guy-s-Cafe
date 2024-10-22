@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee Shop</title>
+    <!-- Font Awesome CDN link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+	<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
+    <!-- Custom CSS file link -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<!-- Header Section Starts -->
+	<header class="header">
+		<a href="#" class="logo">
+			<img src="assets/images/logo.png" alt="Coffee Shop Logo">
+		</a>
+		<nav class="navbar">
+			<a href="#home">home</a>
+			<a href="#about">about</a>
+			<a href="#review">review</a>
+			<a href="#contact">contact</a>
+		</nav>
+		<div class="spacer"></div>
+		<div class="icons">
+			<div class="fas fa-search" id="search-btn"></div>
+			<div class="fas fa-shopping-cart" id="cart-btn"></div>
+			<div class="fas fa-bars" id="menu-btn"></div>
+			<a href="#menu" class="btn">MENU</a>
+		</div>
+		
+		<div class="search-form">
+			<input type="search" id="search-box" placeholder="search here...">
+			<label for="search-box" class="fas fa-search"></label>
+		</div>
+		<div class="cart-items-container">
+			<!-- Cart Items to be Inserted Here -->
+		</div>
+	</header>
+	<!-- Header Section Ends -->
+
+	<!-- Home Section Starts -->
+	<section class="home" id="home">
+		<div class="content">
+			<h3>FOUR GUY'S <BR> COFFEE</h3>
+			<p></p>
+			<a href="#menu" class="btn">get yours now</a>
+		</div>
+	</section>
+	<!-- Home Section Ends -->
+
+	<!-- About Section Starts -->
+	<section class="about" id="about">
+		<h1 class="heading"><span>about</span> us</h1>
+		<div class="row">
+			<div class="image">
+				<img src="assets/images/about-img.jpeg" alt="">
+			</div>
+			<div class="content">
+				<h3>what makes our coffee special?</h3>
+				<p></p>
+				<p></p>
+				<a class="btn" id="about-btn">learn more</a>
+			</div>
+		</div>
+	</section>
+	<!-- About Section Ends -->
+
+	<!-- Modal Structure -->
+	<div class="modal-about" id="aboutModal">
+		<div class="modal-about-content">
+			<span class="close-about">&times;</span>
+			<h3>Our Story</h3>
+			<p>At FOUR GUY'S COFFEE, we believe in serving more than just coffee. Our beans are sourced from the finest farms, and every cup is crafted with passion. Whether you’re here to unwind or connect with friends, we promise an unforgettable experience. Join us in celebrating the love for coffee!</p>
+			<p>Come and savor the flavors of our carefully curated beverages. We look forward to serving you!</p>
+		</div>
+	</div>
+
+	<!-- Menu Section Starts -->
+	<section class="menu" id="menu">
+		<h1 class="heading"><span>our</span> menu</h1>
+		<h3 class="menu-category">COFFEE</h3>
+		<div class="box-container">
+			<div class="box">
+				<img src="assets/images/menu-1.png" alt="">
+				<h3>Caramel</h3>
+				<div class="price">₱100.00 <span>₱139.99</span></div>
+				<a class="btn">add to cart</a>
+			</div>
+			<div class="box">
+				<img src="assets/images/menu-2.png" alt="">
+				<h3>Cappuccino</h3>
+				<div class="price">₱150.00 <span>₱170.00</span></div>
+				<a class="btn">add to cart</a>
+			</div>
+			<div class="box">
+				<img src="assets/images/menu-3.png" alt="">
+				<h3>Latte macchiato</h3>
+				<div class="price">₱180.00 <span>₱200.00</span></div>
+				<a class="btn">add to cart</a>
+			</div>
+			<div class="box">
+				<img src="assets/images/menu-4.png" alt="">
+				<h3>Flat white</h3>
+				<div class="price">₱199.99 <span>₱229.99</span></div>
+				<a class="btn">add to cart</a>
+			</div>
+			<div class="box">
+				<img src="assets/images/menu-5.png" alt="">
+				<h3>Hazelnut</h3>
+				<div class="price">₱199.99 <span>₱229.99</span></div>
+				<a class="btn">add to cart</a>
+			</div>
+			<div class="box">
+				<img src="assets/images/menu-6.png" alt="">
+				<h3>Cuban espresso</h3>
+				<div class="price">₱169.99 <span>₱189.99</span></div>
+				<a class="btn">add to cart</a>
+			</div>
+		</div>
+
+		<h3 class="menu-category">NON COFFEE</h3>
+		<div class="box-container">
+			<div class="box">
+				<img src="assets/images/menu-7.png" alt="">
+				<h3>Chocolate</h3>
+				<div class="price">₱110.00 <span>₱140.00</span></div>
+				<a class="btn">add to cart</a>
+			</div>
+			<div class="box">
+				<img src="assets/images/menu-8.png" alt="">
+				<h3>Lemon Tea</h3>
+				<div class="price">₱90.00 <span>₱110.00</span></div>
+				<a class="btn">add to cart</a>
+			</div>
+			<div class="box">
+				<img src="assets/images/menu-9.png" alt="">
+				<h3>Milk Tea</h3>
+				<div class="price">₱110.00 <span>₱145.00</span></div>
+				<a class="btn">add to cart</a>
+			</div>
+		</div>
+
+		<h3 class="menu-category">PASTA</h3>
+		<div class="box-container">
+			<div class="box">
+				<img src="assets/images/menu-10.png" alt="">
+				<h3>Lasagna</h3>
+				<div class="price">₱215.00 <span>₱239.99</span></div>
+				<a class="btn">add to cart</a>
+			</div>
+			<div class="box">
+				<img src="assets/images/menu-11.png" alt="">
+				<h3>Carbonara</h3>
+				<div class="price">₱210.00 <span>₱239.99</span></div>
+				<a class="btn">add to cart</a>
+			</div>
+			<div class="box">
+				<img src="assets/images/menu-12.png" alt="">
+				<h3>Bolognese</h3>
+				<div class="price">₱200.00 <span>₱230.00</span></div>
+				<a class="btn">add to cart</a>
+			</div>
+		</div>
+
+		<h3 class="menu-category">EVERYDAY BREAKFAST</h3>
+		<div class="box-container">
+			<div class="box">
+				<img src="assets/images/menu-13.png" alt="">
+				<h3>Premiun Beef Tapa</h3>
+				<div class="price">₱220.00 <span>₱260.00</span></div>
+				<a class="btn">add to cart</a>
+			</div>
+			<div class="box">
+				<img src="assets/images/menu-14.png" alt="">
+				<h3>Cheese and Ham Omelette</h3>
+				<div class="price">₱170.00 <span>₱199.99</span></div>
+				<a class="btn">add to cart</a>
+			</div>
+			<div class="box">
+				<img src="assets/images/menu-15.png" alt="">
+				<h3>French Toast</h3>
+				<div class="price">₱135.00 <span>₱145.00</span></div>
+				<a class="btn">add to cart</a>
+			</div>
+		</div>
+	</section>
+	<!-- Menu Section Ends -->
+
+	<div class="modal" id="myModal">
+		<div class="modal-content">
+			<span class="close">&times;</span>
+			<p>This is a modal message!</p>
+		</div>
+	</div>
+
+	<!-- Review Section Starts -->
+	<section class="review" id="review">
+		<h1 class="heading">customer's <span> review</span></h1>
+		<div class="box-container">
+			<div class="box">
+				<img src="assets/images/quote-img.png" alt="" class="quote">
+				<p>Nyaman ya pare, Lasap ang Sarap 5star ka saken</p>
+				<img src="assets/images/bubuy1.jpg" class="user" alt="">
+				<h3>Bubuy</h3>
+				<div class="stars">
+					<i class="fas fa-star"></i>
+					<i class="fas fa-star"></i>
+					<i class="fas fa-star"></i>
+					<i class="fas fa-star"></i>
+					<i class="fas fa-star-half-alt"></i>
+				</div>
+			</div>
+			<div class="box">
+				<img src="assets/images/quote-img.png" alt="" class="quote">
+				<p>Nyaman na soy</p>
+				<img src="assets/images/lovely1.png" class="user" alt="">
+				<h3>Lovely</h3>
+				<div class="stars">
+					<i class="fas fa-star"></i>
+					<i class="fas fa-star"></i>
+					<i class="fas fa-star"></i>
+					<i class="fas fa-star"></i>
+					<i class="fas fa-star-half-alt"></i>
+				</div>
+			</div>
+			<div class="box">
+				<img src="assets/images/quote-img.png" alt="" class="quote">
+				<p>Yummy D</p>
+				<img src="assets/images/aaron1.png" class="user" alt="">
+				<h3>Aaron</h3>
+				<div class="stars">
+					<i class="fas fa-star"></i>
+					<i class="fas fa-star"></i>
+					<i class="fas fa-star"></i>
+					<i class="fas fa-star"></i>
+					<i class="fas fa-star-half-alt"></i>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Review Section Ends -->
+
+	<!-- Contact Section Starts -->
+	<section class="contact" id="contact">
+		<h1 class="heading">contact <span> us</span></h1>
+		<div class="row">
+			<div id="map"></div>
+			<form>
+				<h3>get in touch</h3>
+				<div class="inputBox">
+					<span class="fas fa-user"></span>
+					<input type="text" placeholder="Name">
+				</div>
+				<div class="inputBox">
+					<span class="fas fa-envelope"></span>
+					<input type="email" placeholder="Email">
+				</div>
+				<div class="inputBox">
+					<span class="fas fa-phone"></span>
+					<input type="number" placeholder="Number">
+				</div>
+				<input type="button" value="contact now" class="btn" id="contact-btn">
+			</form>
+		</div>
+	</section>
+	<!-- Contact Section Ends -->
+
+	<!-- Modal Structure -->
+	<div class="modal-contact" id="contactModal">
+		<div class="modal-contact-content">
+			<span class="close-contact">&times;</span>
+			<h3>Thank you for contacting us!</h3>
+			<p>We will reach out to you soon!</p>
+		</div>
+	</div>
+
+	<!-- Footer Section Starts -->
+	<section class="footer">
+		<div class="share">
+			<a href="#" class="fab fa-facebook-f"></a>
+			<a href="#" class="fab fa-twitter"></a>
+			<a href="#" class="fab fa-instagram"></a>
+			<a href="#" class="fab fa-linkedin"></a>
+			<a href="#" class="fab fa-pinterest"></a>
+		</div>
+		<div class="links">
+			<a href="#">home</a>
+			<a href="#">about</a>
+			<a href="#">review</a>
+			<a href="#">contact</a>
+		</div>
+		<div class="credit">
+			created by 
+			<span class="developer-info"> <a href="https://www.facebook.com/mhegazy33" target="https://www.facebook.com/mhegazy33"> FOUR GUY'S COFFEE </a></span> | all rights reserved <br> <br>
+			<p class="orignal"> 
+				SEAN JAY INFANTE <br>
+				XAVIER KYLE LAPIRA <br>
+				CHRISTIAN JAMES GAMBOA <br>
+				JOVEN CARL GUILAS
+			</p>
+		</div>
+	</section>
+	<!-- Footer Section Ends -->
+	<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+	<!-- Custom JS file link -->
+	<script src="js/script.js"></script>
+
+</body>
+</html>
